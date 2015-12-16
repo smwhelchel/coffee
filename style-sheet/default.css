@@ -1,0 +1,56 @@
+.caption {
+  font-family: 'Raleway', sans-serif;
+}
+#main-color {
+  height: 110px;
+  width: 110px;
+  background-color: #AA3939;
+  padding: 10px;
+}
+#secondary-color {
+  height: 110px;
+  width: 110px;
+  background-color: #AA6C39;
+  padding: 10px;
+}
+#third-color {
+  height: 110px;
+  width: 110px;
+  background-color: #882D60;
+  padding: 10px;
+}
+#raleway {
+  font-family: 'Raleway', sans-serif;
+  font-size: 18px;
+  text-align: center;
+}
+#noto {
+  font-family: 'Noto', serif;
+  font-size: 18px;
+  text-align: center;
+}
+#colors {
+  border: 5px solid black;
+}
+#font-styles {
+  text-align: center;
+}
+#official-colors {
+  text-align: center;
+}
+h1, h3 {
+  font-family: 'Noto', serif;
+  text-align: center;
+}
+h4 {
+  font-size: 24px;
+  font-family:'Noto', serif;
+  margin-top: 30px;
+}
+h1 {
+  margin-top: 10px;
+  font-size: 48px;
+}
+h3 {
+  margin: 0;
+}
