@@ -13,16 +13,15 @@
           var menuData = menuObject.drinks[i];
           console.log(menuData);
           var menuColumn= document.createElement('div');
-          menuColumn.setAttribute('class', 'col-sm-3 col-md-3');
-          menuColumn.setAttribute('id', 'show-menu');
+          menuColumn.setAttribute('class', 'col-sm-3 col-md-3 show-menu');
           var thumbnail= document.createElement('div');
           thumbnail.setAttribute('class', 'thumbnail');
           var image= document.createElement('img');
           var caption= document.createElement('div');
           caption.setAttribute('class', 'caption');
-          var button= document.createElement('p');
+          caption.textContent= menuObject.drinks[i].name;
+          var button= document.createElement('button');
           button.setAttribute('class', 'btn btn-default');
-
           caption.appendChild(button);
           image.appendChild(caption);
           thumbnail.appendChild(image);
