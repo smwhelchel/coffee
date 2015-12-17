@@ -1,7 +1,7 @@
 {
   "drinks": [
   { "name": "Dark Roast",
-    "price": "$1.50",
+    "price": "$1.50"
   },
   {
     "name": "Blonde Roast",
