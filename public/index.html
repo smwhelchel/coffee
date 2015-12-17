@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Noto+Serif|Raleway' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="css/default.css">
+    <title> Coffee</title>
+  </head>
+  <body>
+    <!--navbar-->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button class="navbar-toggle collapsed" data-target="#collapse" data-toggle="collapse" type="button" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="nav-bar"></span>
+            <span class="nav-bar"></span>
+            <span class="nav-bar"></span>
+          </button>
+          <a class="navbar-logo" href="#">
+            <img src="images/Drawing.png" alt="coffee logo" class="img-responsive">
+          </a>
+        </div> 
+        <div class="collapse navbar-collapse" id="collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li id="menu-nav"><a href="#menu">Menu</a></li>
+            <li><a href="#contact">Conact Us</a></li>i
+            <li><i class="fa fa-shopping-cart fa-2x"></i><a href="#cart"></a></li>
+          </ul>
+        </div> 
+      </div> 
+    </nav>
+
+    <!--Coffee bean background and top heading container-->
+    <div class="container" id="header">
+      <div class="opacity"></div>
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="header"> Your favorite drink.<br> Delivered straight to your door.</h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid" id="howitworks">
+      <div class="row row-centered">
+        <div class="col-md-12" id="howitworksrow">
+          <h2> How It Works</h2>
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-centered howitworks">
+            <img class="img-circle img-responsive center-block" src="images/coffee-heart.jpg">
+            <h3>Pick Your Favorite Drink</h3>
+            <small>Browse the menu to choose which drink you want.</small>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-centered howitworks">
+            <img class="img-circle img-responsive center-block" src="http://www.coffeedetective.com/images/order-coffee-online-ow.jpg">
+            <h3>Add a drink(s) to your cart. </h3>
+            <small>Checkout when you are ready.</small>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-centered howitworks">
+            <img class="img-circle img-responsive center-block" src="http://40.media.tumblr.com/tumblr_lzus85UxHD1qgjvrso1_1280.jpg">
+            <h3>Specify time and location for delivery.</h3>
+            <small>Have your drink delivered now, or later in the day.</small>
+          </div>
+        </div> 
+      </div>
+    </div>
+    <div class="container-fluid" id="menu">
+      <div id="menu-populate" class="hidden">
+        <div class="col-md-3">
+          <div class="row">
+            <div id="show-menu">
+              <h3>show</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/app.js"></script>
+  </body>
+</html>
