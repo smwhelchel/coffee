@@ -40,6 +40,59 @@ xhr.onreadystatechange = function() {
 xhr.open('GET', '/js/menu.json', true)
 xhr.send(null);
 
+//Order form Modal
+var openModal= function {
+  var modal= document.createElement('div');
+  modal.setAttribute('class', 'modal fade');
+  modal.setAttribute('tabindex', '-1');
+  modal.setAttribute('role', 'dialog');
+  var modalDialog= document.createElement('div');
+  modalDialog.setAttribute('class', 'modal-dialog');
+  var modalContent= document.createElement('div');
+  modalContent.setAttribute('class', 'modal-content');
+  var modalHeader=document.createElement('div');
+  modalHeader.setAttribute('class', 'modal-header');
+  var modalButton=document.createElement('button');
+  modalButton.setAttribute('type', 'button');
+  modalButton.setAttribute('class', 'close');
+  modalButton.setAttribute('data-dismiss', 'modal');
+  modalButton.setAttribute('aria-label', 'close');
+  var span=document.createElement('span');
+  span.setAttribute('aria-hidden', 'true');
+  var header=document.createElement('h4');
+  header.setAttribute('class', 'modal-title');
+  var modalBody= document.createElement('div');
+  modalBody.setAttribute('class', 'modal-body');
+  var pElement= document.createElement('p');
+  var modalFooter=document.createElement('div');
+  modalFooter.setAttribute('class', 'modal-footer');
+  var button=document.createElement('button');
+  button.setAttribute('type', 'button');
+  button.setAttribute('class', 'btn btn-default');
+  button.setAttribute('data-dismiss', 'modal');
+  modalFooter.appendChild('button');
+  modalBody.appendChild('pElement');
+  modalHeader.appendChild('header');
+  modalHeader.appendChild('modalButton');
+  modalContent.appendChild('modalHeader');
+  modalDialog.appendChild('modalContent');
+  modal.appendChild('modalDialog');
+  body.appendChild('modal');
+}
+document.getElementById()
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
