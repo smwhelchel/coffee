@@ -1,8 +1,9 @@
+//showing menu items after click of menu navigation icon
 var myMenu= document.getElementById('menu-nav')
 var menuContainer= document.getElementById('menu-populate')
 myMenu.addEventListener('click', function() { menuContainer.className='show'})
 
-
+//populating menu items using json file
 var xhr= new XMLHttpRequest();
 xhr.onreadystatechange = function() {
   if (xhr.readyState==4) {
@@ -24,7 +25,9 @@ xhr.onreadystatechange = function() {
       var hElement= document.createElement('h3');
       hElement.textContent= menuObject.drinks[i].name;
       var button= document.createElement('button');
+      var text= document.createTextNode('Buy now');
       button.setAttribute('class', 'btn btn-default menu-button');
+      button.appendChild(text);
       hElement.appendChild(button);
       caption.appendChild(hElement)
       thumbnail.appendChild(image);
@@ -36,5 +39,7 @@ xhr.onreadystatechange = function() {
 }; 
 xhr.open('GET', '/js/menu.json', true)
 xhr.send(null);
+
+
 
 
