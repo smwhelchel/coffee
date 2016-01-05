@@ -10,7 +10,6 @@ xhr.onreadystatechange = function() {
   if (xhr.readyState==4) {
     var menuObject = JSON.parse(xhr.responseText);
 
-    console.log(menuObject.drinks[0]);
     for (i=0; i<menuObject.drinks.length; i++) {
       var menuData = menuObject.drinks[i];
       console.log(menuData);
@@ -41,21 +40,92 @@ xhr.onreadystatechange = function() {
 xhr.open('GET', '/js/menu.json', true)
 xhr.send(null);
 
-/*var xhr= new XMLHttpRequest();
+
+
+var buyNow =document.getElementsByClassName('menu-button');
+buyNow.addEventListener('click', function () {
+  var xhr= new XMLHttpRequest();
+  xhr.onreadystatechange = function(){
+    if (xhr.readyState==4) {
+      var menuItems = JSON.parse(xhr.responseText);
+    }
+    console.log(menuItems.drinks[0]);
+    for (i=0; i<menuItems.drinks.length; i++) {
+      var id = menuItems.name[i];
+      id=id.replace(/\s+/g, '-').toLowerCase();
+      var coffeeThumbnail=(name, price);
+      openModal(id, menuItems.drinks[i].name, menuItems.drinks[i].price);
+
+      function openModal (name, id, price) {
+        var modal= document.createElement('div');
+        modal.setAttribute('class', 'modal fade');
+        modal.setAttribute('tabindex', '-1');
+        modal.setAttribute('role', 'dialog');
+        var modalDialog= document.createElement('div');
+        modalDialog.setAttribute('class', 'modal-dialog');
+        var modalContent= document.createElement('div');
+        modalContent.setAttribute('class', 'modal-content');
+        var modalHeader=document.createElement('div');
+        modalHeader.setAttribute('class', 'modal-header');
+        var modalButton=document.createElement('button');
+        modalButton.setAttribute('type', 'button');
+        modalButton.setAttribute('class', 'close');
+        modalButton.setAttribute('data-dismiss', 'modal');
+        modalButton.setAttribute('aria-label', 'close');
+        var span=document.createElement('span');
+        span.setAttribute('aria-hidden', 'true');
+        var header=document.createElement('h4');
+        header.setAttribute('class', 'modal-title');
+        header.textContent('Place Order:');
+        var modalBody= document.createElement('div');
+        modalBody.setAttribute('class', 'modal-body');
+        var pElement= document.createElement('p');
+        pElement.textContent('');
+        var modalFooter=document.createElement('div');
+        modalFooter.setAttribute('class', 'modal-footer');
+        var button=document.createElement('button');
+        button.setAttribute('type', 'button');
+        button.setAttribute('class', 'btn btn-default');
+        button.setAttribute('data-dismiss', 'modal');
+        button.textContent('Place Order');
+        modalFooter.appendChild('button');
+        modalBody.appendChild('pElement');
+        modalHeader.appendChild('header');
+        modalHeader.appendChild('modalButton');
+        modalContent.appendChild('modalHeader');
+        modalDialog.appendChild('modalContent');
+        modal.appendChild('modalDialog');
+        body.appendChild('modal');
+      }
+
+    }
+  };
+})
+xhr.open('GET', '/js/menu.json', true)
+xhr.send(null);
+
+
+/*
+//Create order form request
+var xhr= new XMLHttpRequest();
 xhr.onreadystatechange = function(){
   if (xhr.readyState==4) {
     var menuItems = JSON.parse(xhr.responseText);
   }
   console.log(menuItems.drinks[0]);
-  for (i=0; i<menuObject.drinks.length; i++) {
+  for (i=0; i<menuItems.drinks.length; i++) {
     var id = menuItems.name[i];
     id=id.replace(/\s+/g, '-').toLowerCase();
-    coffeeThumbnail(name, price)
+    var coffeeThumbnail=(name, price);
     openModal(id, menuItems.drinks[i].name, menuItems.drinks[i].price);
-}
+  }
+};
+xhr.open('GET', '/js/menu.json', true)
+xhr.send(null);
+
 
 //Order form Modal
-var openModal= function(name, id, price) {
+function openModal (name, id, price) {
   var modal= document.createElement('div');
   modal.setAttribute('class', 'modal fade');
   modal.setAttribute('tabindex', '-1');
@@ -92,17 +162,8 @@ var openModal= function(name, id, price) {
   modalDialog.appendChild('modalContent');
   modal.appendChild('modalDialog');
   body.appendChild('modal');
-};*/
-
-/*console.log(menuObject.drinks[0]);
-    for (i=0; i<menuObject.drinks.length; i++) {
-      var id = '';
-      coffeeThumbnail(name, price)
-      openModal(id, menuObject.drinks[i].name, menuObject.drinks[i].price);
-
-myModal(id, price, name)
+}
 */
-
 
 
 
