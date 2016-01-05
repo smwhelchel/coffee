@@ -3,6 +3,7 @@ var myMenu= document.getElementById('menu-nav')
 var menuContainer= document.getElementById('menu-populate')
 myMenu.addEventListener('click', function() { menuContainer.className='show'})
 
+
 //populating menu items using json file
 var xhr= new XMLHttpRequest();
 xhr.onreadystatechange = function() {
@@ -40,8 +41,21 @@ xhr.onreadystatechange = function() {
 xhr.open('GET', '/js/menu.json', true)
 xhr.send(null);
 
+/*var xhr= new XMLHttpRequest();
+xhr.onreadystatechange = function(){
+  if (xhr.readyState==4) {
+    var menuItems = JSON.parse(xhr.responseText);
+  }
+  console.log(menuItems.drinks[0]);
+  for (i=0; i<menuObject.drinks.length; i++) {
+    var id = menuItems.name[i];
+    id=id.replace(/\s+/g, '-').toLowerCase();
+    coffeeThumbnail(name, price)
+    openModal(id, menuItems.drinks[i].name, menuItems.drinks[i].price);
+}
+
 //Order form Modal
-var openModal= function {
+var openModal= function(name, id, price) {
   var modal= document.createElement('div');
   modal.setAttribute('class', 'modal fade');
   modal.setAttribute('tabindex', '-1');
@@ -78,8 +92,16 @@ var openModal= function {
   modalDialog.appendChild('modalContent');
   modal.appendChild('modalDialog');
   body.appendChild('modal');
-}
-document.getElementById()
+};*/
+
+/*console.log(menuObject.drinks[0]);
+    for (i=0; i<menuObject.drinks.length; i++) {
+      var id = '';
+      coffeeThumbnail(name, price)
+      openModal(id, menuObject.drinks[i].name, menuObject.drinks[i].price);
+
+myModal(id, price, name)
+*/
 
 
 

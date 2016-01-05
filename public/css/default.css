@@ -3,6 +3,11 @@ h1 {
   color: #AA3939;
   font-size: 48px;
 }
+h2 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+
+}
 .opacity {
 position: absolute;
   top: 0;
@@ -44,23 +49,6 @@ position: absolute;
   height: 40px;
   width: 80px;
 }
-
-#overlay {
-     visibility: hidden;
-     position: absolute;
-     left: 0px;
-     top: 0px;
-     width:100%;
-     height:100%;
-     text-align:center;
-     z-index: 1000;
-}
-
-#overlay div {
-     width:300px;
-     margin: 100px auto;
-     background-color: #fff;
-     border:1px solid #000;
-     padding:15px;
-     text-align:center;
+#footer {
+  float: right;
 }
