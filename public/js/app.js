@@ -73,6 +73,7 @@ function createModal(name, id, price, img) {
   
   var header = document.createElement('h4');
   header.setAttribute('class', 'modal-title');
+  header.setAttribute('id', 'order-header');
   header.textContent = 'Place Order:';
   
   var modalBody = document.createElement('div');
@@ -80,11 +81,11 @@ function createModal(name, id, price, img) {
   
   //name of drink
   var pElement = document.createElement('p');
-  pElement.textContent = name;
+  pElement.textContent = "Your Cart: " + name;
 
   //price of drink
   var priceDrink = document.createElement('p');
-  priceDrink.textContent = price + " x ";
+  priceDrink.textContent = '$' + price + " x ";
 
   var updatePrice = document.createElement('text');
   updatePrice.setAttribute('id', 'update-price');
@@ -92,8 +93,8 @@ function createModal(name, id, price, img) {
   var quantityData = document.createElement('input');
   quantityData.setAttribute('type', 'text');
   quantityData.setAttribute('id', 'quantity-data');
-  quantityData.setAttribute('size', '3');
-  quantityData.setAttribute('maxlength', '99');
+  quantityData.setAttribute('size', '8');
+  quantityData.setAttribute('placeholder', "Quantity");
   var quantityLineBreak = document.createElement('br');
 
   quantityData.addEventListener('input', function() {
@@ -106,6 +107,7 @@ function createModal(name, id, price, img) {
   })
 
   var fieldset = document.createElement('fieldset');
+  fieldset.setAttribute('id', 'fieldset');
 
   var quantity = document.createElement('form');
   quantity.setAttribute('id', 'form')
@@ -161,8 +163,23 @@ function createModal(name, id, price, img) {
   labelZip.setAttribute('for', 'zip');
   labelZip.textContent = 'Zip Code:';
 
+  var deliveryCost = document.createElement('text');
+  deliveryCost.setAttribute('id', 'delivery-cost');
+  //deliveryCost.textContent = '$' + 0.50 * miles;
+
+  var deliveryLabel = document.createElement('label');
+  deliveryLabel.setAttribute('id', 'delivery-cost');
+  deliveryLabel.setAttribute('for', 'delivery-label');
+  deliveryLabel.textContent = 'Delivery Cost:';
+  var deliveryLineBreak = document.createElement('br');
+
+  var total = document.createElement('text');
+  total.setAttribute('id', 'total');
+  //total.textContent = deliveryCost + updatePrice;
+
   var labelTotal = document.createElement('label');
   labelTotal.setAttribute('id', 'total-label');
+  labelTotal.setAttribute('for', 'total');
   labelTotal.textContent = 'Total:';
   var totalLineBreak = document.createElement('br');
 
@@ -172,6 +189,7 @@ function createModal(name, id, price, img) {
   var deliveryButton = document.createElement('button');
   deliveryButton.setAttribute('type', 'button');
   deliveryButton.setAttribute('class', 'btn btn-primary');
+  deliveryButton.setAttribute('id', 'delivery-button');
   deliveryButton.textContent = 'Calculate Delivery Cost';
   
   //place order button
@@ -203,7 +221,11 @@ function createModal(name, id, price, img) {
   labelState.appendChild(state);
   quantity.appendChild(labelZip);
   labelZip.appendChild(zip);
-  quantity.appendChild(totalLineBreak);
+  fieldset.appendChild(deliveryLineBreak);
+  fieldset.appendChild(deliveryLabel);
+  deliveryLabel.appendChild(deliveryCost);
+  fieldset.appendChild(totalLineBreak);
+  labelTotal.appendChild(total);
   fieldset.appendChild(labelTotal);
   modalHeader.appendChild(modalButton);
   modalHeader.appendChild(header);
@@ -236,8 +258,4 @@ xhr.onreadystatechange = function() {
 }; 
 xhr.open('GET', '/js/menu.json', true)
 xhr.send(null);
-
-
-
-
 
