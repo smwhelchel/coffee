@@ -52,3 +52,6 @@ position: absolute;
 #footer {
   float: right;
 }
+#form {
+  margin-bottom: 10px;
+}

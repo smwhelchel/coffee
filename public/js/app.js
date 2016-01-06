@@ -78,16 +78,29 @@ function createModal(name, id, price, img) {
   var modalBody = document.createElement('div');
   modalBody.setAttribute('class', 'modal-body');
   
+  //name of drink
   var pElement = document.createElement('p');
   pElement.textContent = name;
 
+  //price of drink
+  var priceDrink = document.createElement('p');
+  priceDrink.textContent = price;
+
+  var fieldset = document.createElement('fieldset');
+
   var quantity = document.createElement('form');
+  quantity.setAttribute('id', 'form')
+  quantity.style.display = 'block';
 
+  //change quantity
   var quantitySelection = document.createElement('select');
+  quantitySelection.setAttribute('id', 'formQuantity');
 
-  /*var label = document.createElement('label');
-  label.setAttribute('for', quantityNumber1);
-  label.textContent = 'Quantity:';*/
+  //quantity label
+  var label = document.createElement('label');
+  label.setAttribute('for', 'formQuantity');
+  label.setAttribute('id', 'label');
+  label.textContent = 'Quantity:';
 
   var quantityNumber1 = document.createElement('option');
   quantityNumber1.textContent = '';
@@ -104,12 +117,26 @@ function createModal(name, id, price, img) {
   var quantityNumber5 = document.createElement('option');
   quantityNumber5.textContent = '4';
 
-  var priceDrink = document.createElement('p');
-  priceDrink.textContent = price;
-
   var userName = document.createElement('input');
   userName.setAttribute('type', 'text');
-  userName.textContent = 'Name';
+  userName.setAttribute('id', 'user-name');
+  var userLineBreak = document.createElement('br');
+
+  //label for user name
+  var labelName = document.createElement('label');
+  labelName.setAttribute('id', 'name-label');
+  labelName.setAttribute('for', 'user-name');
+  labelName.textContent = 'Name:';
+
+  var address = document.createElement('label');
+  address.setAttribute('id', 'address');
+  address.setAttribute('type', 'text');
+  var addressLineBreak = document.createElement('br');
+
+  var labelAddress = document.createElement('label');
+  labelName.setAttribute('id', 'address-label');
+  labelName.setAttribute('for', 'address');
+  labelName.textContent = 'Address:';
   
   var modalFooter = document.createElement('div');
   modalFooter.setAttribute('class', 'modal-footer');
@@ -119,6 +146,7 @@ function createModal(name, id, price, img) {
   deliveryButton.setAttribute('class', 'btn btn-primary');
   deliveryButton.textContent = 'Calculate Delivery Cost';
   
+  //place order button
   var button = document.createElement('button');
   button.setAttribute('type', 'button');
   button.setAttribute('class', 'btn btn-default');
@@ -130,15 +158,22 @@ function createModal(name, id, price, img) {
   modalFooter.appendChild(deliveryButton);
   modalFooter.appendChild(button);
   modalBody.appendChild(pElement);
-  modalBody.appendChild(quantity);
-  quantity.appendChild(quantitySelection);
+  modalBody.appendChild(priceDrink);
+  modalBody.appendChild(fieldset);
+  fieldset.appendChild(quantity);
+  label.appendChild(quantitySelection);
+  quantity.appendChild(label);
+  quantity.appendChild(userLineBreak);
+  quantity.appendChild(labelName);
+  labelName.appendChild(userName);
+  quantity.appendChild(addressLineBreak);
+  quantity.appendChild(labelAddress);
+  labelAddress.appendChild(address);
   quantitySelection.appendChild(quantityNumber1);
   quantitySelection.appendChild(quantityNumber2);
   quantitySelection.appendChild(quantityNumber3);
   quantitySelection.appendChild(quantityNumber4);
   quantitySelection.appendChild(quantityNumber5);
-  modalBody.appendChild(userName);
-  modalBody.appendChild(priceDrink);
   modalHeader.appendChild(modalButton);
   modalHeader.appendChild(header);
   modalHeader.appendChild(modalButton);
@@ -148,7 +183,6 @@ function createModal(name, id, price, img) {
   modalDialog.appendChild(modalContent);
   modal.appendChild(modalDialog);
   body.appendChild(modal);
-
 
 }
 
