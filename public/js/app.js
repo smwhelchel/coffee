@@ -5,7 +5,7 @@ myMenu.addEventListener('click', function() {
   menuContainer.className = 'show';
 });
 
-
+//appending menu items to DOM
 function menuItem(name, cap, img, pricing, id) {
 
   var menuColumn = document.createElement('div');
@@ -44,7 +44,8 @@ function menuItem(name, cap, img, pricing, id) {
   document.getElementById('menu-row').appendChild(menuColumn);
 }
 
-function createModal(name, id, price) {
+//create modal
+function createModal(name, id, price, img) {
   
   var modal = document.createElement('div');
   modal.setAttribute('id', id);
@@ -79,9 +80,44 @@ function createModal(name, id, price) {
   
   var pElement = document.createElement('p');
   pElement.textContent = name;
+
+  var quantity = document.createElement('form');
+
+  var quantitySelection = document.createElement('select');
+
+  /*var label = document.createElement('label');
+  label.setAttribute('for', quantityNumber1);
+  label.textContent = 'Quantity:';*/
+
+  var quantityNumber1 = document.createElement('option');
+  quantityNumber1.textContent = '';
+
+  var quantityNumber2 = document.createElement('option');
+  quantityNumber2.textContent = '1';
+
+  var quantityNumber3 = document.createElement('option');
+  quantityNumber3.textContent = '2';
+
+  var quantityNumber4 = document.createElement('option');
+  quantityNumber4.textContent = '3';
+
+  var quantityNumber5 = document.createElement('option');
+  quantityNumber5.textContent = '4';
+
+  var priceDrink = document.createElement('p');
+  priceDrink.textContent = price;
+
+  var userName = document.createElement('input');
+  userName.setAttribute('type', 'text');
+  userName.textContent = 'Name';
   
   var modalFooter = document.createElement('div');
   modalFooter.setAttribute('class', 'modal-footer');
+
+  var deliveryButton = document.createElement('button');
+  deliveryButton.setAttribute('type', 'button');
+  deliveryButton.setAttribute('class', 'btn btn-primary');
+  deliveryButton.textContent = 'Calculate Delivery Cost';
   
   var button = document.createElement('button');
   button.setAttribute('type', 'button');
@@ -91,8 +127,18 @@ function createModal(name, id, price) {
 
   var body = document.body;
 
+  modalFooter.appendChild(deliveryButton);
   modalFooter.appendChild(button);
   modalBody.appendChild(pElement);
+  modalBody.appendChild(quantity);
+  quantity.appendChild(quantitySelection);
+  quantitySelection.appendChild(quantityNumber1);
+  quantitySelection.appendChild(quantityNumber2);
+  quantitySelection.appendChild(quantityNumber3);
+  quantitySelection.appendChild(quantityNumber4);
+  quantitySelection.appendChild(quantityNumber5);
+  modalBody.appendChild(userName);
+  modalBody.appendChild(priceDrink);
   modalHeader.appendChild(modalButton);
   modalHeader.appendChild(header);
   modalHeader.appendChild(modalButton);
@@ -102,6 +148,8 @@ function createModal(name, id, price) {
   modalDialog.appendChild(modalContent);
   modal.appendChild(modalDialog);
   body.appendChild(modal);
+
+
 }
 
 //populating menu items using json file
