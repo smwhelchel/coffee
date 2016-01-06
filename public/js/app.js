@@ -25,7 +25,7 @@ function menuItem(name, cap, img, pricing, id) {
   hElement.textContent = name;
   
   var price = document.createElement('h5');
-  price.textContent = pricing;
+  price.textContent = "$" +pricing;
 
   var button = document.createElement('button');
   button.setAttribute('data-target', '#' + id);
@@ -84,7 +84,26 @@ function createModal(name, id, price, img) {
 
   //price of drink
   var priceDrink = document.createElement('p');
-  priceDrink.textContent = price;
+  priceDrink.textContent = price + " x ";
+
+  var updatePrice = document.createElement('text');
+  updatePrice.setAttribute('id', 'update-price');
+
+  var quantityData = document.createElement('input');
+  quantityData.setAttribute('type', 'text');
+  quantityData.setAttribute('id', 'quantity-data');
+  quantityData.setAttribute('size', '3');
+  quantityData.setAttribute('maxlength', '99');
+  var quantityLineBreak = document.createElement('br');
+
+  quantityData.addEventListener('input', function() {
+    console.log(price);
+    console.log(quantityData.value);
+    var getQuantity = parseInt(quantityData.value);
+    var newPrice = price * quantityData.value;
+    parsedPrice = parseFloat(newPrice).toFixed(2);
+    updatePrice.textContent = " = $" + parsedPrice;
+  })
 
   var fieldset = document.createElement('fieldset');
 
@@ -92,52 +111,61 @@ function createModal(name, id, price, img) {
   quantity.setAttribute('id', 'form')
   quantity.style.display = 'block';
 
-  //change quantity
-  var quantitySelection = document.createElement('select');
-  quantitySelection.setAttribute('id', 'formQuantity');
-
-  //quantity label
-  var label = document.createElement('label');
-  label.setAttribute('for', 'formQuantity');
-  label.setAttribute('id', 'label');
-  label.textContent = 'Quantity:';
-
-  var quantityNumber1 = document.createElement('option');
-  quantityNumber1.textContent = '';
-
-  var quantityNumber2 = document.createElement('option');
-  quantityNumber2.textContent = '1';
-
-  var quantityNumber3 = document.createElement('option');
-  quantityNumber3.textContent = '2';
-
-  var quantityNumber4 = document.createElement('option');
-  quantityNumber4.textContent = '3';
-
-  var quantityNumber5 = document.createElement('option');
-  quantityNumber5.textContent = '4';
-
   var userName = document.createElement('input');
   userName.setAttribute('type', 'text');
   userName.setAttribute('id', 'user-name');
   var userLineBreak = document.createElement('br');
 
-  //label for user name
   var labelName = document.createElement('label');
   labelName.setAttribute('id', 'name-label');
   labelName.setAttribute('for', 'user-name');
   labelName.textContent = 'Name:';
 
-  var address = document.createElement('label');
+  var address = document.createElement('input');
   address.setAttribute('id', 'address');
   address.setAttribute('type', 'text');
   var addressLineBreak = document.createElement('br');
 
   var labelAddress = document.createElement('label');
-  labelName.setAttribute('id', 'address-label');
-  labelName.setAttribute('for', 'address');
-  labelName.textContent = 'Address:';
-  
+  labelAddress.setAttribute('id', 'address-label');
+  labelAddress.setAttribute('for', 'address');
+  labelAddress.textContent = 'Address:';
+
+  var city = document.createElement('input');
+  city.setAttribute('id', 'city');
+  city.setAttribute('type', 'text');
+  var cityLineBreak = document.createElement('br');
+
+  var labelCity = document.createElement('label');
+  labelCity.setAttribute('id', 'city-label');
+  labelCity.setAttribute('for', 'city');
+  labelCity.textContent = 'City:';  
+
+  var state = document.createElement('input');
+  state.setAttribute('id', 'state');
+  state.setAttribute('type', 'text');
+  state.setAttribute('size', '2');
+
+  var labelState = document.createElement('label');
+  labelState.setAttribute('id', 'state-label');
+  labelState.setAttribute('for', 'state');
+  labelState.textContent = 'State:';
+
+  var zip = document.createElement('input');
+  zip.setAttribute('id', 'zip');
+  zip.setAttribute('type', 'text');
+  zip.setAttribute('size', '5');
+
+  var labelZip = document.createElement('label');
+  labelZip.setAttribute('id', 'zip-label');
+  labelZip.setAttribute('for', 'zip');
+  labelZip.textContent = 'Zip Code:';
+
+  var labelTotal = document.createElement('label');
+  labelTotal.setAttribute('id', 'total-label');
+  labelTotal.textContent = 'Total:';
+  var totalLineBreak = document.createElement('br');
+
   var modalFooter = document.createElement('div');
   modalFooter.setAttribute('class', 'modal-footer');
 
@@ -161,19 +189,22 @@ function createModal(name, id, price, img) {
   modalBody.appendChild(priceDrink);
   modalBody.appendChild(fieldset);
   fieldset.appendChild(quantity);
-  label.appendChild(quantitySelection);
-  quantity.appendChild(label);
-  quantity.appendChild(userLineBreak);
+  priceDrink.appendChild(quantityData);
+  priceDrink.appendChild(updatePrice); 
   quantity.appendChild(labelName);
   labelName.appendChild(userName);
   quantity.appendChild(addressLineBreak);
   quantity.appendChild(labelAddress);
   labelAddress.appendChild(address);
-  quantitySelection.appendChild(quantityNumber1);
-  quantitySelection.appendChild(quantityNumber2);
-  quantitySelection.appendChild(quantityNumber3);
-  quantitySelection.appendChild(quantityNumber4);
-  quantitySelection.appendChild(quantityNumber5);
+  quantity.appendChild(cityLineBreak);
+  quantity.appendChild(labelCity);
+  labelCity.appendChild(city);
+  quantity.appendChild(labelState);
+  labelState.appendChild(state);
+  quantity.appendChild(labelZip);
+  labelZip.appendChild(zip);
+  quantity.appendChild(totalLineBreak);
+  fieldset.appendChild(labelTotal);
   modalHeader.appendChild(modalButton);
   modalHeader.appendChild(header);
   modalHeader.appendChild(modalButton);

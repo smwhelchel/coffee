@@ -1,49 +1,49 @@
 {
   "drinks": [
   { "name": "Dark Roast",
-    "price": "$1.50",
+    "price": "1.50",
     "image": "/images/dark-roast.jpg",
     "caption": "Dark and smoky flavor with rich and powerful taste"
   },
   {
     "name": "Blonde Roast",
-    "price": "$1.50",
+    "price": "1.50",
     "image": "/images/blonde-roast.jpg",
     "caption": "Light colored beans with a milder and less bitter flavor"
   },
   {
     "name": "Medium Roast",
-    "price": "$1.50",
+    "price": "1.50",
     "image": "/images/medium-roast.jpg",
     "caption": "Rich dark color and slightly bittersweet taste"
   },
   {
     "name": "Decaf Coffee",
-    "price": "$1.50",
+    "price": "1.50",
     "image": "/images/decaf-coffee.jpg",
     "caption": "Medium roast flavor without the caffeine of regular coffee"
   },
   {
     "name": "Iced Coffee",
-    "price": "$2.00",
+    "price": "2.00",
     "image": "/images/iced-coffee.jpg",
     "caption": "Medium roast coffee lightly sweetened and poured over ice"
   },
   {
     "name": "Americano",
-    "price": "$2.00",
+    "price": "2.00",
     "image": "/images/americano.jpg",
     "caption": "Espresso shots combined with hot water to resemble coffee brewed in drip filter"
   },
   {
     "name": "Iced Tea",
-    "price": "$1.50",
+    "price": "1.50",
     "image": "/images/iced-tea.jpg",
     "caption": "Black tea leaves lightly sweetened and poured over ice"
   },
   {
     "name": "Lemonade",
-    "price": "$1.50",
+    "price": "1.50",
     "image": "/images/lemonade.jpg",
     "caption": "Fresh lemon juice with a hint of sugar and poured over ice"
   }
