@@ -272,13 +272,15 @@ submitPrice.addEventListener('submit', function(e) {
   myObject['city'] = submitPrice.getElementsByTagName('input')[3].value;
   myObject['state'] = submitPrice.getElementsByTagName('input')[4].value;
   myObject['zip'] = submitPrice.getElementsByTagName('input')[5].value;
-  console.log(myObject);
   var xhr = new XMLHttpRequest();
   var objectString = JSON.stringify(myObject);
-  xhr.open('POST', 'http://localhost:1337/cart', true);
+  xhr.open('POST', 'http://localhost:1337/post', true);
+  xhr.setRequestHeader('Content-Type', 'application/JSON');
   xhr.send(objectString);
   console.log(objectString);
 }, false);
+
+
 
 var orderButton = document.getElementById(id + '-order-button');
 orderButton.addEventListener('click', function() {
