@@ -81,3 +81,10 @@ position: absolute;
 #visa, #mastercard, #money {
   padding: 10px;
 }
+#dark-roast-new, #blonde-roast-new, #medium-roast-new, #decaf-coffee-new, 
+#iced-coffee-new, #americano-new, #iced-tea-new, #lemonade-new {
+  height: 491px;
+  width: 598px;
+  font-size: 24px;
+  text-align: center;
+}

@@ -58,6 +58,7 @@ function createModal(name, id, price, img) {
   
   var modalContent = document.createElement('div');
   modalContent.setAttribute('class', 'modal-content');
+  modalContent.setAttribute('id', 'modal-content ' + id);
   
   var modalHeader = document.createElement('div');
   modalHeader.setAttribute('class', 'modal-header');
@@ -111,7 +112,7 @@ function createModal(name, id, price, img) {
   fieldset.setAttribute('id', 'fieldset');
 
   var quantity = document.createElement('form');
-  quantity.setAttribute('id', 'form')
+  quantity.setAttribute('id', id + '-form');
   quantity.style.display = 'block';
 
   var userName = document.createElement('input');
@@ -206,21 +207,21 @@ function createModal(name, id, price, img) {
   modalFooter.setAttribute('class', 'modal-footer');
 
   var deliveryButton = document.createElement('button');
-  deliveryButton.setAttribute('type', 'button');
+  deliveryButton.setAttribute('type', 'submit');
   deliveryButton.setAttribute('class', 'btn btn-primary');
   deliveryButton.setAttribute('id', 'delivery-button');
   deliveryButton.textContent = 'Calculate Delivery Cost';
   
   //place order button
   var button = document.createElement('button');
-  button.setAttribute('type', 'button');
+  button.setAttribute('type', 'submit');
+  button.setAttribute('id', id + '-order-button');
   button.setAttribute('class', 'btn btn-default');
   button.setAttribute('data-dismiss', 'modal');
   button.textContent = 'Place Order';
 
   var body = document.body;
 
-  modalFooter.appendChild(deliveryButton);
   modalFooter.appendChild(button);
   modalBody.appendChild(fieldset);
   fieldset.appendChild(quantity);
@@ -241,6 +242,7 @@ function createModal(name, id, price, img) {
   quantity.appendChild(labelZip);
   labelZip.appendChild(zip);
   fieldset.appendChild(deliveryLineBreak);
+  quantity.appendChild(deliveryButton);
   fieldset.appendChild(deliveryLabel);
   deliveryLabel.appendChild(deliveryCost);
   fieldset.appendChild(totalLineBreak);
@@ -260,6 +262,33 @@ function createModal(name, id, price, img) {
   modalDialog.appendChild(modalContent);
   modal.appendChild(modalDialog);
   body.appendChild(modal);
+
+var submitPrice = document.getElementById(id + '-form');
+submitPrice.addEventListener('submit', function(e) {
+  e.preventDefault();
+  console.log('found');
+  myObject = {};
+  myObject['quantity'] = submitPrice.getElementsByTagName('input')[0].value;
+  myObject['name'] = submitPrice.getElementsByTagName('input')[1].value;
+  myObject['address'] = submitPrice.getElementsByTagName('input')[2].value;
+  myObject['city'] = submitPrice.getElementsByTagName('input')[3].value;
+  myObject['state'] = submitPrice.getElementsByTagName('input')[4].value;
+  myObject['zip'] = submitPrice.getElementsByTagName('input')[5].value;
+  console.log(myObject);
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', 'http://localhost:1337/cart', true);
+  xhr.send();
+}, false);
+
+var orderButton = document.getElementById(id + '-order-button');
+orderButton.addEventListener('click', function() {
+  var submitNow = document.getElementById('modal-content');
+  var lineBreak = document.createElement('br');
+  var newDiv = ('Thank you for your order. It will be arriving shortly!');
+  var newDiv2 = ('Call 949-4-COFFEE for information or concerns.');
+  modalContent.setAttribute('id', id + '-new');
+  modalContent.textContent = newDiv + newDiv2;
+})
 
 }
 
