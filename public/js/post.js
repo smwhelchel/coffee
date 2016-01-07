@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 var router = express.Router();
 
-var route = require ('./app.js');
+var route = require ('/app.js');
 
 app.use(route);
 

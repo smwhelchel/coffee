@@ -40,6 +40,9 @@ position: absolute;
   font-family: 'Raleway', sans-serif;
   padding-bottom: 20px;
 }
+#howitworksrow {
+  margin-bottom: 10px;
+}
 #collapse {
   padding-right: 20px;
   padding-top: 20px;

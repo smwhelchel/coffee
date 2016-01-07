@@ -89,6 +89,7 @@ function createModal(name, id, price, img) {
 
   var updatePrice = document.createElement('text');
   updatePrice.setAttribute('id', 'update-price');
+  updatePrice.textContent = ' = $0.00';
 
   var quantityData = document.createElement('input');
   quantityData.setAttribute('type', 'text');
@@ -221,10 +222,10 @@ function createModal(name, id, price, img) {
 
   modalFooter.appendChild(deliveryButton);
   modalFooter.appendChild(button);
-  modalBody.appendChild(pElement);
-  modalBody.appendChild(priceDrink);
   modalBody.appendChild(fieldset);
   fieldset.appendChild(quantity);
+  quantity.appendChild(pElement);
+  quantity.appendChild(priceDrink);
   priceDrink.appendChild(quantityData);
   priceDrink.appendChild(updatePrice); 
   quantity.appendChild(labelName);
