@@ -75,3 +75,6 @@ position: absolute;
   font-size: 24px;
   font-weight: bold;
 }
+#visa, #mastercard, #money {
+  padding: 10px;
+}

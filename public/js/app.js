@@ -136,6 +136,7 @@ function createModal(name, id, price, img) {
   var city = document.createElement('input');
   city.setAttribute('id', 'city');
   city.setAttribute('type', 'text');
+  city.setAttribute('size', '30');
   var cityLineBreak = document.createElement('br');
 
   var labelCity = document.createElement('label');
@@ -183,6 +184,23 @@ function createModal(name, id, price, img) {
   labelTotal.textContent = 'Total:';
   var totalLineBreak = document.createElement('br');
 
+  var payment = document.createElement('text');
+  payment.setAttribute('id', 'payment');
+  payment.textContent = 'Payment forms accepted upon delivery: ';
+  var paymentLineBreak = document.createElement('br');
+
+  var visa = document.createElement('i');
+  visa.setAttribute('class', 'fa fa-cc-visa fa-2x');
+  visa.setAttribute('id', 'visa');
+
+  var mastercard = document.createElement('i');
+  mastercard.setAttribute('class', 'fa fa-cc-mastercard fa-2x');
+  mastercard.setAttribute('id', 'mastercard');
+
+  var money = document.createElement('i');
+  money.setAttribute('class', 'fa fa-money fa-2x');
+  money.setAttribute('id', 'money');
+
   var modalFooter = document.createElement('div');
   modalFooter.setAttribute('class', 'modal-footer');
 
@@ -227,6 +245,11 @@ function createModal(name, id, price, img) {
   fieldset.appendChild(totalLineBreak);
   labelTotal.appendChild(total);
   fieldset.appendChild(labelTotal);
+  fieldset.appendChild(paymentLineBreak);
+  fieldset.appendChild(payment);
+  fieldset.appendChild(visa);
+  fieldset.appendChild(mastercard);
+  fieldset.appendChild(money);
   modalHeader.appendChild(modalButton);
   modalHeader.appendChild(header);
   modalHeader.appendChild(modalButton);
