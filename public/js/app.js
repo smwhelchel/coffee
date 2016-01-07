@@ -100,8 +100,6 @@ function createModal(name, id, price, img) {
   var quantityLineBreak = document.createElement('br');
 
   quantityData.addEventListener('input', function() {
-    console.log(price);
-    console.log(quantityData.value);
     var getQuantity = parseInt(quantityData.value);
     var newPrice = price * quantityData.value;
     parsedPrice = parseFloat(newPrice).toFixed(2);
@@ -276,8 +274,10 @@ submitPrice.addEventListener('submit', function(e) {
   myObject['zip'] = submitPrice.getElementsByTagName('input')[5].value;
   console.log(myObject);
   var xhr = new XMLHttpRequest();
+  var objectString = JSON.stringify(myObject);
   xhr.open('POST', 'http://localhost:1337/cart', true);
-  xhr.send();
+  xhr.send(objectString);
+  console.log(objectString);
 }, false);
 
 var orderButton = document.getElementById(id + '-order-button');
@@ -285,9 +285,10 @@ orderButton.addEventListener('click', function() {
   var submitNow = document.getElementById('modal-content');
   var lineBreak = document.createElement('br');
   var newDiv = ('Thank you for your order. It will be arriving shortly!');
-  var newDiv2 = ('Call 949-4-COFFEE for information or concerns.');
+  //var newImage = document.createElement('src', 'http://ilovecoffee.co.za/wp-content/uploads/2012/02/ilcr-banner.jpg');
+  //var newDiv2 = ('Call 949-4-COFFEE for information or concerns.');
   modalContent.setAttribute('id', id + '-new');
-  modalContent.textContent = newDiv + newDiv2;
+  modalContent.textContent = newDiv;
 })
 
 }
@@ -299,7 +300,6 @@ xhr.onreadystatechange = function() {
     var menuObject = JSON.parse(xhr.responseText);
     for (i=0; i<menuObject.drinks.length; i++) {
       var menuData = menuObject.drinks[i];
-      console.log(menuData.image);
       var id = menuData.name;
       id = id.replace(/\s+/g, '-').toLowerCase();
       
