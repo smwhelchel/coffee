@@ -88,3 +88,17 @@ position: absolute;
   font-size: 24px;
   text-align: center;
 }
+#footer ul li {
+  display: inline-block;
+  padding: 10px;
+  float: right;
+  font-family: 'Raleway', sans-serif;
+}
+#location {
+  font-family: 'Raleway', sans-serif;
+  padding: 10px;
+}
+#footer-color {
+  background-color: #AA3939;
+}
+
