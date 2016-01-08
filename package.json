@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/smwhelchel/coffee-delivered/issues"
   },
-  "homepage": "https://github.com/smwhelchel/coffee-delivered#readme"
+  "homepage": "https://github.com/smwhelchel/coffee-delivered#readme",
+  "dependencies": {
+    "body-parser": "^1.14.2",
+    "express": "^4.13.3",
+    "require": "^2.4.20",
+    "router": "^1.1.3"
+  }
 }
