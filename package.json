@@ -1,0 +1,19 @@
+{
+  "name": "coffee-delivered",
+  "version": "1.0.0",
+  "description": "Coffee delivery for coffee lovers who want their coffee delivered.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smwhelchel/coffee-delivered.git"
+  },
+  "author": "Shannon Whelchel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/smwhelchel/coffee-delivered/issues"
+  },
+  "homepage": "https://github.com/smwhelchel/coffee-delivered#readme"
+}
