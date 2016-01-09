@@ -10,9 +10,6 @@ app.use('/post', post);
 
 app.use(express.static('public'));
 
-app.use('/post', bodyParser.json(), function (req, res) {
-  console.log(JSON.stringify(req.body, null, 2));
-});
 
 app.listen(1337);
 console.log('server listening');
