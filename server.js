@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 var post = require('./post.js');
-var api = require('./api.js');
+var api = require('./post.js');
 var bodyParser = require('body-parser')
 
 app.use('/api', api);

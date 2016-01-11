@@ -27,7 +27,9 @@ router.post('/', bodyParser.json(), function (req, res) {
       console.log('server works');
       res.send(JSON.parse(body).response);
       console.log(body);
-    }
+    } 
+    var distanceData = body[2][0][0][0].value;
+    console.log(distanceData);
   });
 });
 
