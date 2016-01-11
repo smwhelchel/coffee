@@ -11,7 +11,7 @@ router.post('/', bodyParser.json(), function (req, res) {
   var data = req.body;
     var newAddress = data.address.replace(/\s+/g, '+');
 
-  queryURL = baseUrl + '4590+Macarthur+Newport+Beach+CA&destinations=' + newAddress + '+' + data.city + '+' + data.state +'&units=imperial'+ apiKey;
+  var queryURL = baseUrl + '4590+Macarthur+Newport+Beach+CA&destinations=' + newAddress + '+' + data.city + '+' + data.state +'&units=imperial'+ apiKey;
 
   request(queryURL, function (error, response, body) {
      console.log(body);
@@ -26,10 +26,13 @@ router.post('/', bodyParser.json(), function (req, res) {
     if (!error && response.statusCode == 200) {
       console.log('server works');
       res.send(JSON.parse(body).response);
-      console.log(body);
+      var data = JSON.parse(body);
+      var distanceData = data.rows[0].elements[0].distance.value;
+      console.log(distanceData);
+      var calculation = (distanceData/1609.34) * 0.50;
+      var newCalculation = parseFloat(calculation).toFixed(2);
+      console.log(newCalculation);
     } 
-    var distanceData = body[2][0][0][0].value;
-    console.log(distanceData);
   });
 });
 

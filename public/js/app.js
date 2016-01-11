@@ -165,8 +165,8 @@ function createModal(name, id, price, img) {
   labelZip.textContent = 'Zip Code:';
 
   var deliveryCost = document.createElement('text');
-  deliveryCost.setAttribute('id', 'delivery-cost');
-  //deliveryCost.textContent = '$' + 0.50 * miles;
+  deliveryCost.setAttribute('id', id + '-delivery-cost');
+  //deliveryCost.textContent = newCalculation;
 
   var deliveryLabel = document.createElement('label');
   deliveryLabel.setAttribute('id', 'delivery-cost');
