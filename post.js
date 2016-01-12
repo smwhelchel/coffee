@@ -25,13 +25,13 @@ router.post('/', bodyParser.json(), function (req, res) {
 
     if (!error && response.statusCode == 200) {
       console.log('server works');
-      res.send(JSON.parse(body).response);
       var data = JSON.parse(body);
       var distanceData = data.rows[0].elements[0].distance.value;
       console.log(distanceData);
       var calculation = (distanceData/1609.34) * 0.50;
       var newCalculation = parseFloat(calculation).toFixed(2);
       console.log(newCalculation);
+      res.send(newCalculation);
     } 
   });
 });

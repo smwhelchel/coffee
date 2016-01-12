@@ -104,6 +104,7 @@ function createModal(name, id, price, img) {
     var newPrice = price * quantityData.value;
     parsedPrice = parseFloat(newPrice).toFixed(2);
     updatePrice.textContent = " = $" + parsedPrice;
+    return parsedPrice;
   })
 
   var fieldset = document.createElement('fieldset');
@@ -174,10 +175,6 @@ function createModal(name, id, price, img) {
   deliveryLabel.textContent = 'Delivery Cost:';
   var deliveryLineBreak = document.createElement('br');
 
-  var total = document.createElement('text');
-  total.setAttribute('id', 'total');
-  //total.textContent = deliveryCost + updatePrice;
-
   var labelTotal = document.createElement('label');
   labelTotal.setAttribute('id', 'total-label');
   labelTotal.setAttribute('for', 'total');
@@ -244,7 +241,7 @@ function createModal(name, id, price, img) {
   fieldset.appendChild(deliveryLabel);
   deliveryLabel.appendChild(deliveryCost);
   fieldset.appendChild(totalLineBreak);
-  labelTotal.appendChild(total);
+  
   fieldset.appendChild(labelTotal);
   fieldset.appendChild(paymentLineBreak);
   fieldset.appendChild(payment);
@@ -275,12 +272,27 @@ submitPrice.addEventListener('submit', function(e) {
   var xhr = new XMLHttpRequest();
   var objectString = JSON.stringify(myObject);
   xhr.open('POST', 'http://localhost:1337/post', true);
+  xhr.addEventListener('load', function() {
+    var response = xhr.responseText;
+    console.log(response);
+    var newResponse = parseInt(response);
+  var deliveryCost = document.createElement('text');
+  deliveryCost.setAttribute('id', id + '-delivery-cost');
+  deliveryCost.textContent = ' $' + newResponse;
+  deliveryLabel.appendChild(deliveryCost);
+  console.log(deliveryCost);
+   var total = document.createElement('div');
+  total.setAttribute('id', id + '-total');
+  total.textContent = deliveryCost + parsedPrice;
+  console.log(total);
+  labelTotal.appendChild(total);
+
+  });
+
   xhr.setRequestHeader('Content-Type', 'application/JSON');
   xhr.send(objectString);
   console.log(objectString);
 }, false);
-
-
 
 var orderButton = document.getElementById(id + '-order-button');
 orderButton.addEventListener('click', function() {
@@ -288,9 +300,10 @@ orderButton.addEventListener('click', function() {
   var lineBreak = document.createElement('br');
   var newDiv = ('Thank you for your order. It will be arriving shortly!');
   //var newImage = document.createElement('src', 'http://ilovecoffee.co.za/wp-content/uploads/2012/02/ilcr-banner.jpg');
-  //var newDiv2 = ('Call 949-4-COFFEE for information or concerns.');
+  var newDiv2 = (' Call 949-4-COFFEE for information or concerns.');
   modalContent.setAttribute('id', id + '-new');
-  modalContent.textContent = newDiv;
+  modalContent.setAttribute('data-img-url', 'http://ilovecoffee.co.za/wp-content/uploads/2012/02/ilcr-banner.jpg');
+  modalContent.textContent = newDiv + newDiv2;
 })
 
 }
