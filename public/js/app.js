@@ -106,6 +106,7 @@ function createModal(name, id, price, img) {
     updatePrice.textContent = " = $" + parsedPrice;
   })
 
+
   var fieldset = document.createElement('fieldset');
   fieldset.setAttribute('id', 'fieldset');
 
@@ -267,15 +268,13 @@ submitPrice.addEventListener('submit', function(e) {
   xhr.open('POST', 'http://localhost:1337/post', true);
   xhr.addEventListener('load', function() {
     var response = xhr.responseText;
-    var newResponse = parseInt(response);
   var deliveryCost = document.createElement('text');
   deliveryCost.setAttribute('id', id + '-delivery-cost');
-  deliveryCost.textContent = ' $' + newResponse;
+  deliveryCost.textContent = ' $' + response;
   deliveryLabel.appendChild(deliveryCost);
-  console.log(deliveryCost);
-   var total = document.createElement('div');
+   var total = document.createElement('text');
   total.setAttribute('id', id + '-total');
-  total.textContent = deliveryCost + parsedPrice;
+  //total.textContent = response + parsedPrice;
   labelTotal.appendChild(total);
 
   });
