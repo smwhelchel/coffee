@@ -44,7 +44,6 @@ function menuItem(name, cap, img, pricing, id) {
   document.getElementById('menu-row').appendChild(menuColumn);
 }
 
-//create modal
 function createModal(name, id, price, img) {
   
   var modal = document.createElement('div');
@@ -99,12 +98,12 @@ function createModal(name, id, price, img) {
   quantityData.setAttribute('placeholder', "Quantity");
   var quantityLineBreak = document.createElement('br');
 
+  //calculate price based on quantity
   quantityData.addEventListener('input', function() {
     var getQuantity = parseInt(quantityData.value);
     var newPrice = price * quantityData.value;
     parsedPrice = parseFloat(newPrice).toFixed(2);
     updatePrice.textContent = " = $" + parsedPrice;
-    return parsedPrice;
   })
 
   var fieldset = document.createElement('fieldset');
@@ -164,10 +163,6 @@ function createModal(name, id, price, img) {
   labelZip.setAttribute('id', 'zip-label');
   labelZip.setAttribute('for', 'zip');
   labelZip.textContent = 'Zip Code:';
-
-  var deliveryCost = document.createElement('text');
-  deliveryCost.setAttribute('id', id + '-delivery-cost');
-  //deliveryCost.textContent = newCalculation;
 
   var deliveryLabel = document.createElement('label');
   deliveryLabel.setAttribute('id', 'delivery-cost');
@@ -239,9 +234,7 @@ function createModal(name, id, price, img) {
   fieldset.appendChild(deliveryLineBreak);
   quantity.appendChild(deliveryButton);
   fieldset.appendChild(deliveryLabel);
-  deliveryLabel.appendChild(deliveryCost);
   fieldset.appendChild(totalLineBreak);
-  
   fieldset.appendChild(labelTotal);
   fieldset.appendChild(paymentLineBreak);
   fieldset.appendChild(payment);
@@ -274,7 +267,6 @@ submitPrice.addEventListener('submit', function(e) {
   xhr.open('POST', 'http://localhost:1337/post', true);
   xhr.addEventListener('load', function() {
     var response = xhr.responseText;
-    console.log(response);
     var newResponse = parseInt(response);
   var deliveryCost = document.createElement('text');
   deliveryCost.setAttribute('id', id + '-delivery-cost');
@@ -284,7 +276,6 @@ submitPrice.addEventListener('submit', function(e) {
    var total = document.createElement('div');
   total.setAttribute('id', id + '-total');
   total.textContent = deliveryCost + parsedPrice;
-  console.log(total);
   labelTotal.appendChild(total);
 
   });
