@@ -104,6 +104,7 @@ function createModal(name, id, price, img) {
     var newPrice = price * quantityData.value;
     parsedPrice = parseFloat(newPrice).toFixed(2);
     updatePrice.textContent = " = $" + parsedPrice;
+    updatePrice.setAttribute('data-price', parsedPrice);
   })
 
 
@@ -267,17 +268,18 @@ submitPrice.addEventListener('submit', function(e) {
   var objectString = JSON.stringify(myObject);
   xhr.open('POST', 'http://localhost:1337/post', true);
   xhr.addEventListener('load', function() {
-    var response = xhr.responseText;
-  var deliveryCost = document.createElement('text');
-  deliveryCost.setAttribute('id', id + '-delivery-cost');
-  deliveryCost.textContent = ' $' + response;
-  deliveryLabel.appendChild(deliveryCost);
-   var total = document.createElement('text');
-  total.setAttribute('id', id + '-total');
-  //total.textContent = response + parsedPrice;
-  labelTotal.appendChild(total);
-
-  });
+   var response = xhr.responseText;
+   var newResponse = Number(response);
+   var deliveryCost = document.createElement('text');
+   deliveryCost.setAttribute('id', id + '-delivery-cost');
+   deliveryCost.textContent = ' $' + newResponse;
+   deliveryLabel.appendChild(deliveryCost);
+   console.log(deliveryCost);
+   var quantityTotal = submitPrice.getElementsByTagName('text')[0].getAttribute('data-price');
+   var theTotal = 'Total: $' + (newResponse + Number(quantityTotal)).toFixed(2);
+   console.log(quantityTotal);
+   labelTotal.textContent = theTotal;
+ });
 
   xhr.setRequestHeader('Content-Type', 'application/JSON');
   xhr.send(objectString);
@@ -289,11 +291,9 @@ orderButton.addEventListener('click', function() {
   var submitNow = document.getElementById('modal-content');
   var lineBreak = document.createElement('br');
   var newDiv = ('Thank you for your order. It will be arriving shortly!');
-  //var newImage = document.createElement('src', 'http://ilovecoffee.co.za/wp-content/uploads/2012/02/ilcr-banner.jpg');
-  var newDiv2 = (' Call 949-4-COFFEE for information or concerns.');
   modalContent.setAttribute('id', id + '-new');
   modalContent.setAttribute('data-img-url', 'http://ilovecoffee.co.za/wp-content/uploads/2012/02/ilcr-banner.jpg');
-  modalContent.textContent = newDiv + newDiv2;
+  modalContent.textContent = newDiv;
 })
 
 }
