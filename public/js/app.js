@@ -277,7 +277,7 @@ submitPrice.addEventListener('submit', function(e) {
    console.log(deliveryCost);
    var quantityTotal = submitPrice.getElementsByTagName('text')[0].getAttribute('data-price');
    var theTotal = 'Total: $' + (newResponse + Number(quantityTotal)).toFixed(2);
-   console.log(quantityTotal);
+   console.log(submitPrice.getElementsByTagName('text'));
    labelTotal.textContent = theTotal;
  });
 
