@@ -19,6 +19,7 @@
   "dependencies": {
     "body-parser": "^1.14.2",
     "express": "^4.13.3",
+    "request": "^2.67.0",
     "require": "^2.4.20",
     "router": "^1.1.3"
   }
