@@ -18,6 +18,10 @@ position: absolute;
   opacity: .6;
   background-color: black;
 }
+.navbar-header {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 #header {
   position: relative;
   background-image: url(../images/coffee-beans.jpg);
