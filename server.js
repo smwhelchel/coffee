@@ -10,7 +10,6 @@ app.use('/post', post);
 
 app.use(express.static('public'));
 
-
 app.listen(1337);
 console.log('server listening');
 
