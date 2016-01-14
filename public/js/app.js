@@ -85,7 +85,8 @@ function createModal(name, id, price, img) {
 
   //price of drink
   var priceDrink = document.createElement('p');
-  priceDrink.textContent = '$' + price + " x ";
+  priceDrink.setAttribute('id', 'price-drink');
+  priceDrink.textContent = '$' + price + ' x ';
 
   var updatePrice = document.createElement('text');
   updatePrice.setAttribute('id', 'update-price');
@@ -107,7 +108,6 @@ function createModal(name, id, price, img) {
     updatePrice.setAttribute('data-price', parsedPrice);
   })
 
-
   var fieldset = document.createElement('fieldset');
   fieldset.setAttribute('id', 'fieldset');
 
@@ -118,6 +118,7 @@ function createModal(name, id, price, img) {
   var userName = document.createElement('input');
   userName.setAttribute('type', 'text');
   userName.setAttribute('id', 'user-name');
+  userName.setAttribute('size', '50');
   var userLineBreak = document.createElement('br');
 
   var labelName = document.createElement('label');
@@ -128,6 +129,7 @@ function createModal(name, id, price, img) {
   var address = document.createElement('input');
   address.setAttribute('id', 'address');
   address.setAttribute('type', 'text');
+  address.setAttribute('size', '50');
   var addressLineBreak = document.createElement('br');
 
   var labelAddress = document.createElement('label');
@@ -138,7 +140,7 @@ function createModal(name, id, price, img) {
   var city = document.createElement('input');
   city.setAttribute('id', 'city');
   city.setAttribute('type', 'text');
-  city.setAttribute('size', '30');
+  city.setAttribute('size', '21');
   var cityLineBreak = document.createElement('br');
 
   var labelCity = document.createElement('label');
@@ -295,7 +297,6 @@ orderButton.addEventListener('click', function() {
   modalContent.setAttribute('data-img-url', 'http://ilovecoffee.co.za/wp-content/uploads/2012/02/ilcr-banner.jpg');
   modalContent.textContent = newDiv;
 })
-
 }
 
 //populating menu items using json file
@@ -316,4 +317,3 @@ xhr.onreadystatechange = function() {
 }; 
 xhr.open('GET', '/js/menu.json', true)
 xhr.send(null);
-

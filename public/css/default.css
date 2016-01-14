@@ -62,15 +62,25 @@ position: absolute;
 #form {
   margin-bottom: 10px;
 }
+#quantity-data {
+  margin-left: 20px;
+}
 #name-label {
   padding-right: 10px;
 }
-#user-name, #address {
+#address {
   margin-left: 10px;
 }
-#state, #zip, #city {
-  margin-left: 10px;
+#user-name {
+  margin-left: 27px;
+}
+#city {
+  margin-left: 42px;
+  margin-right: 9px;
+}
+#state, #zip {
   margin-right: 10px;
+  margin-left: 10px;
 }
 #fieldset, p {
   font-family: 'Raleway', sans-serif;
@@ -105,4 +115,9 @@ position: absolute;
 #footer-color {
   background-color: #AA3939;
 }
-
+.form-control {
+  display: inline-block;
+}
+#name-label, #address-label, #city-label {
+  
+}
