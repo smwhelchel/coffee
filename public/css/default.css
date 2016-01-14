@@ -118,6 +118,12 @@ position: absolute;
 .form-control {
   display: inline-block;
 }
-#name-label, #address-label, #city-label {
-  
+@media (max-width: 551px) {
+  #user-name, #address {
+    width: 60%;
+  }
+   #state {
+    margin-left: 31px;
+  }
 }
+
