@@ -210,7 +210,7 @@ function createModal(name, id, price, img) {
   var button = document.createElement('button');
   button.setAttribute('type', 'submit');
   button.setAttribute('id', id + '-order-button');
-  button.setAttribute('class', 'btn btn-default');
+  button.setAttribute('class', 'btn btn-default order-button');
   button.setAttribute('data-dismiss', 'modal');
   button.textContent = 'Place Order';
 

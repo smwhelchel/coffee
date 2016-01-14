@@ -118,12 +118,62 @@ position: absolute;
 .form-control {
   display: inline-block;
 }
+#delivery-button {
+  background-color: #882D60;
+  border: #882D60;
+  margin-top: 20px;
+}
+#delivery-button:hover {
+  background-color: #661141;
+}
+.order-button {
+  background-color: #882D60;
+  border: #882D60;
+  color: white;
+}
+.order-button:hover {
+  background-color: #661141;
+  color: white;
+}
+#menu-nav {
+  font-size: 16px;
+  font-family: 'Raleway', sans-serif;
+  color: #000;
+  border: 1px solid #AA3939;
+  margin-top: 5px;
+}
+#menu-nav:hover {
+  background-color: #AA3939;
+}
+.menu-button:hover {
+  background-color: #AA3939;
+}
 @media (max-width: 551px) {
+  #menu-nav {
+    margin-left: 10px;
+  }
+  #user-name {
+    width: 60%;
+  }
+  #address {
+    width: 58.5%;
+  }
+  #city {
+    width: 204.5px;
+  }
+   #state {
+    margin-left: 31px;
+  }
+  #zip {
+    width: 85px;
+  }
+}
+/*@media (max-width: 551px) {
   #user-name, #address {
     width: 60%;
   }
    #state {
     margin-left: 31px;
   }
-}
+}*/
 
