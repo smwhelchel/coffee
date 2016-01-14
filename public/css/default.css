@@ -6,7 +6,6 @@ h1 {
 h2 {
   font-family: 'Raleway', sans-serif;
   font-weight: bold;
-
 }
 .opacity {
 position: absolute;
@@ -168,12 +167,4 @@ position: absolute;
     width: 85px;
   }
 }
-/*@media (max-width: 551px) {
-  #user-name, #address {
-    width: 60%;
-  }
-   #state {
-    margin-left: 31px;
-  }
-}*/
 
