@@ -5,6 +5,7 @@ var parseJson = bodyParser.json();
 var router = express.Router();
 
 var baseUrl = 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=';
+//must use own google distance matrix server key
 var apiKey = '&key=AIzaSyAExX9EcfkDPFYKOX2VUcd8N4oIHR41wfQ';
 
 router.post('/', bodyParser.json(), function (req, res) {
