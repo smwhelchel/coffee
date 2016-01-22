@@ -35,6 +35,9 @@ position: absolute;
   height: 300px;
   width: 300px;
 }
+.howitworks {
+  margin-bottom: 20px;
+}
 #howitworks {
   text-align: center;
   background-color: #AA6C39;
@@ -57,6 +60,7 @@ position: absolute;
 }
 #footer {
   float: right;
+  padding-top: 15px;
 }
 #form {
   margin-bottom: 10px;
@@ -140,6 +144,14 @@ position: absolute;
   color: #000;
   border: 1px solid #AA3939;
   margin-top: 5px;
+}
+.thumbnail {
+  margin-top: 20px;
+}
+.thumbnail img {
+  margin-right: 0;
+  margin-left: 0;
+  width: 100%;
 }
 #menu-nav:hover {
   background-color: #AA3939;
