@@ -1,3 +1,17 @@
+.howitworks { margin-bottom: 20px; }
+#howitworksrow { margin-bottom: 10px; }
+#form { margin-bottom: 10px; }
+#quantity-data { margin-left: 20px; }
+#name-label { padding-right: 10px; }
+#address { margin-left: 10px; }
+#user-name { margin-left: 27px; }
+#footer-color { background-color: #AA3939; }
+.form-control { display: inline-block; }
+#delivery-button:hover { background-color: #661141; }
+.thumbnail { margin-top: 20px; }
+#menu-nav:hover { background-color: #AA3939; }
+.menu-button:hover { background-color: #AA3939; }
+
 h1 {
   font-family: 'Raleway', sans-serif;
   font-size: 48px;
@@ -37,10 +51,6 @@ h1 {
   width: 300px;
 }
 
-.howitworks {
-  margin-bottom: 20px;
-}
-
 #howitworks {
   text-align: center;
   background-color: #AA6C39;
@@ -51,10 +61,6 @@ h2,
 small {
   padding-bottom: 20px;
   font-family: 'Raleway', sans-serif;
-}
-
-#howitworksrow {
-  margin-bottom: 10px;
 }
 
 #collapse {
@@ -71,26 +77,6 @@ small {
 #footer {
   float: right;
   padding-top: 15px;
-}
-
-#form {
-  margin-bottom: 10px;
-}
-
-#quantity-data {
-  margin-left: 20px;
-}
-
-#name-label {
-  padding-right: 10px;
-}
-
-#address {
-  margin-left: 10px;
-}
-
-#user-name {
-  margin-left: 27px;
 }
 
 #city {
@@ -149,22 +135,10 @@ p {
   font-family: 'Raleway', sans-serif;
 }
 
-#footer-color {
-  background-color: #AA3939;
-}
-
-.form-control {
-  display: inline-block;
-}
-
 #delivery-button {
   margin-top: 20px;
   border: #882D60;
   background-color: #882D60;
-}
-
-#delivery-button:hover {
-  background-color: #661141;
 }
 
 .order-button {
@@ -186,22 +160,10 @@ p {
   border: 1px solid #AA3939;
 }
 
-.thumbnail {
-  margin-top: 20px;
-}
-
 .thumbnail img {
   margin-right: 0;
   margin-left: 0;
   width: 100%;
-}
-
-#menu-nav:hover {
-  background-color: #AA3939;
-}
-
-.menu-button:hover {
-  background-color: #AA3939;
 }
 
 @media (max-width: 551px) {
