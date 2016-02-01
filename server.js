@@ -10,7 +10,6 @@ app.use('/post', post);
 
 app.use(express.static('public'));
 
-var port = process.env.PORT || 3000;
-app.listen(port);
+app.listen(1337);
 console.log('server listening');
 
